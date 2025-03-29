@@ -262,7 +262,7 @@ public class TestKafkaWithConfluentSchemaRegistryMinimalFunctionality
                 .put(SCHEMA_REGISTRY_URL_CONFIG, testingKafka.getSchemaRegistryConnectString());
     }
 
-    private void assertTopic(
+    protected void assertTopic(
             TestingKafka testingKafka,
             String topicName,
             String initialQuery,
@@ -397,7 +397,7 @@ public class TestKafkaWithConfluentSchemaRegistryMinimalFunctionality
         assertThat(getQueryRunner().execute("SELECT count(*) FROM " + toDoubleQuoted(tableName)).getOnlyValue()).isEqualTo(count);
     }
 
-    private static String toDoubleQuoted(String tableName)
+    protected static String toDoubleQuoted(String tableName)
     {
         return format("\"%s\"", tableName);
     }
