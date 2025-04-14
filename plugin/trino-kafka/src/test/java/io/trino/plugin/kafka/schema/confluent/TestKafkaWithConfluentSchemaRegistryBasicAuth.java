@@ -33,9 +33,8 @@ import static org.junit.jupiter.api.parallel.ExecutionMode.SAME_THREAD;
 
 @Execution(SAME_THREAD)
 public class TestKafkaWithConfluentSchemaRegistryBasicAuth
-        extends TestKafkaWithConfluentSchemaRegistryMinimalFunctionality
+        extends KafkaWithConfluentSchemaRegistryUtils
 {
-    private static final String RECORD_NAME = "test_record";
     private TestingKafka testingKafka;
 
     @Override
